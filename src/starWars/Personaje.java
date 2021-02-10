@@ -4,7 +4,7 @@ public class Personaje {
 
 	
 	private String nombre;
-	private int poder;
+	private double poder;
 	private double estatura;
 	private double peso;
 	private Pelicula pelicula;
@@ -19,7 +19,7 @@ public class Personaje {
 	}
 	
 	
-public Personaje(String nombre, int poder, double estatura, double peso, Pelicula pelicula, String especie) {
+public Personaje(String nombre, double poder, double estatura, double peso, Pelicula pelicula, String especie) {
 	
 	this.nombre=nombre;
 	this.poder=poder;
@@ -31,11 +31,22 @@ public Personaje(String nombre, int poder, double estatura, double peso, Pelicul
 	}
 	
 	
-	
+//El   método   toString   del   personaje   debe   mostrar   el   nombre,   
+//la   estatura,   la   especie,   y   acontinuación lo que 
+//sea mayor, la capacidad de destrucción o el peso
 	
 	@Override
 	public String toString() {
-		return "";
+		
+		double poderPeso;
+		if(this.getPeso()>=this.getPoder()) {
+			
+			poderPeso=this.getPeso();
+			
+		}else {
+			poderPeso=this.getPoder();
+		}
+		return this.getNombre()+this.getEstatura()+this.getEspecie()+poderPeso;
 	}
 
 

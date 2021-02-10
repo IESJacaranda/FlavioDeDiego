@@ -28,33 +28,98 @@ public class Pelicula {
 		}
 		
 		
-		public String compararFecha(Pelicula peli) {
+		/**
+		 * Compara con una pelicula. Si el parametro es más viejo devuelve -1,
+		 * 0 en caso de igualdad, 1 en caso de ser más moderno
+		 * @param peli
+		 * @return
+		 */
+		public int compararFecha(Pelicula peli) {
 				
-			String result="";
+			int result=0;
 			
 			if (this.year == peli.getYear()) {
 				
-				result = "Son iguales";
+				result = 0;
 			}else if(this.year>peli.getYear()) {
-				result="La pelicula más reciente es " + peli.getNombre();
+				result=1;
 			}else {
-				result="La pelicula más reciente es " + this.getNombre();
+				result=-1;
 			}
 
 			return result;
 		}
 		
-		public int poderMaximo(Pelicula peli) {
+		public int poderPelicula(Pelicula peli) {
 			
 			
 			
 			return peli.getP1().getPoder() + peli.getP2().getPoder() + peli.getP3().getPoder();
 		}
 		
+		public int poderMaximo(Pelicula peli) {
+			
+			int result;
+			if (peli.getP1().getPoder()>=peli.getP2().getPoder()){
+				if (peli.getP1().getPoder()>=peli.getP3().getPoder()){
+					result=peli.getP1().getPoder();
+				}else {
+					
+					result=peli.getP3().getPoder();
+				}
+				
+			}else if(peli.getP1().getPoder()<=peli.getP2().getPoder()){
+				
+				if (peli.getP2().getPoder()>=peli.getP3().getPoder()){
+					result=peli.getP2().getPoder();
+				}else {
+					
+					result=peli.getP3().getPoder();
+				}
+				
+				
+			}else {
+				result=peli.getP3().getPoder();
+			}
+			
+			
+			return peli.getP1().getPoder() + peli.getP2().getPoder() + peli.getP3().getPoder();
+		}
+		
+		
+		/*
+		 * 
+		 * El método toString de la película debe mostrar el nombre de la película, 
+		 * a continuación elaño del estreno entre paréntesis y a continuación separados 
+		 * por comas los nombres de lospersonajes de la película, ordenados alfabéticamente.
+		 * 
+		 */
 		
 		@Override
 		public String toString() {
-			return "";
+			
+			String nombres=this.getP1().getNombre();
+			
+			if(nombres.compareTo(this.getP2().getNombre())>=0){
+				
+				nombres=this.getP2().getNombre()+","+ nombres;
+				
+			}else {
+				nombres=nombres +","+this.getP2().getNombre();
+						
+			}
+			
+			if(nombres.compareTo(this.getP3().getNombre())>=0){
+				
+				nombres=this.getP3().getNombre()+","+nombres;
+				
+			}else {
+				nombres=nombres +","+ this.getP3().getNombre();
+						
+			}
+			
+			
+			return this.getNombre()+"("+this.getYear()+")"+nombres;
 		}
 
 		public String getNombre() {
