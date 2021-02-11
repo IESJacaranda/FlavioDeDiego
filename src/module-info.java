@@ -1,2 +1,2 @@
-module cadenas {
+module esteEsElBueno {
 }
