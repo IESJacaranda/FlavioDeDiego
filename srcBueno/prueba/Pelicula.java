@@ -1,4 +1,4 @@
-package starWars;
+package prueba;
 
 public class Pelicula {
 
