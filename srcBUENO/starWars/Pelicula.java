@@ -2,8 +2,7 @@ package starWars;
 
 public class Pelicula {
 
-<<<<<<< HEAD
-=======
+
 	
 		private String nombre;
 		private int year;
@@ -35,6 +34,9 @@ public class Pelicula {
 		 * 0 en caso de igualdad, 1 en caso de ser más moderno
 		 * @param peli
 		 * @return
+		 * 
+		 * 
+		 * 
 		 */
 		public int compararFecha(Pelicula peli) {
 				
@@ -52,16 +54,16 @@ public class Pelicula {
 			return result;
 		}
 		
-		public int poderPelicula(Pelicula peli) {
+		public double poderPelicula(Pelicula peli) {
 			
 			
 			
 			return peli.getP1().getPoder() + peli.getP2().getPoder() + peli.getP3().getPoder();
 		}
 		
-		public int poderMaximo(Pelicula peli) {
+		public double poderMaximo(Pelicula peli) {
 			
-			int result;
+			double result;
 			if (peli.getP1().getPoder()>=peli.getP2().getPoder()){
 				if (peli.getP1().getPoder()>=peli.getP3().getPoder()){
 					result=peli.getP1().getPoder();
@@ -163,6 +165,5 @@ public class Pelicula {
 		public void setP3(Personaje p3) {
 			this.p3 = p3;
 		}
-		
->>>>>>> 1b82cac6bd363a90b8c87538234a0ec6ec051de9
+
 }

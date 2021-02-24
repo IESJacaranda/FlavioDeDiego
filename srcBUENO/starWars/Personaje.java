@@ -2,8 +2,7 @@ package starWars;
 
 public class Personaje {
 
-<<<<<<< HEAD
-=======
+
 	
 	private String nombre;
 	private double poder;
@@ -21,10 +20,17 @@ public class Personaje {
 	}
 	
 	
-public Personaje(String nombre, double poder, double estatura, double peso, Pelicula pelicula, String especie) {
+public Personaje(String nombre, double poder, double estatura, double peso, 
+		Pelicula pelicula, String especie) {
+	
+	if(poder>=1 && poder<=100) {
+		this.poder=poder;
+	} //else {
+		//throw new Exception("El poder debe estar entre 1 y 100");
+	//}
+	
 	
 	this.nombre=nombre;
-	this.poder=poder;
 	this.estatura=estatura;
 	this.peso=peso;
 	this.pelicula=pelicula;
@@ -48,7 +54,7 @@ public Personaje(String nombre, double poder, double estatura, double peso, Peli
 		}else {
 			poderPeso=this.getPoder();
 		}
-		return this.getNombre()+this.getEstatura()+this.getEspecie()+poderPeso;
+		return this.getNombre()+" "+this.getEstatura()+" "+this.getEspecie()+" "+poderPeso;
 	}
 
 
@@ -71,7 +77,7 @@ public Personaje(String nombre, double poder, double estatura, double peso, Peli
 
 
 
-	public int getPoder() {
+	public double getPoder() {
 		return poder;
 	}
 
@@ -79,8 +85,12 @@ public Personaje(String nombre, double poder, double estatura, double peso, Peli
 
 
 
-	public void setPoder(int poder) {
-		this.poder = poder;
+	public void setPoder(double poder) {
+		if(poder>=1 && poder<=100) {
+			this.poder=poder;
+		} //else {
+			//throw new Exception("El poder debe estar entre 1 y 100");
+		//}
 	}
 
 
@@ -151,5 +161,4 @@ public Personaje(String nombre, double poder, double estatura, double peso, Peli
 	
 	
 	
->>>>>>> 1b82cac6bd363a90b8c87538234a0ec6ec051de9
 }
