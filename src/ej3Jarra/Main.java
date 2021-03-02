@@ -16,7 +16,7 @@ public class Main {
 	
 	
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception{
 
 		
 		Scanner sc=new Scanner(System.in);
@@ -30,19 +30,32 @@ public class Main {
 		Jarra B=new Jarra(Integer.parseInt(sc.nextLine()));
 		
 		
-		
 	
 		int option=0;
 		while(option!=6) {
 			mostrarMenu();
+		try {
+			option=Integer.parseInt(sc.nextLine());
+		} catch (Exception e) {
+			System.out.println("El valor debe ser un número del 1 al 6");
+		}
 		
-		option=Integer.parseInt(sc.nextLine());
 		switch (option) {
 		case 1:
 			int  option2=0;
 			while (option2!=2 && option2!=1) {
+				System.out.println("Escoge la opción correcta");
 				mostrarEleccionJarra();
-				option2=Integer.parseInt(sc.nextLine());
+				
+				
+				try {
+					option2=Integer.parseInt(sc.nextLine());
+				} catch (Exception e2) {
+
+					System.out.println("Debes introducir un numero entero: 1 o 2");
+				
+				}
+				
 			}
 				if (option2==1) {
 					A.llenarJarra();
@@ -59,7 +72,15 @@ public class Main {
 			option2=0;
 			while (option2!=2 && option2!=1) {
 				mostrarEleccionJarra();
-				option2=Integer.parseInt(sc.nextLine());
+				
+				try {
+					option2=Integer.parseInt(sc.nextLine());
+				} catch (Exception e2) {
+
+					System.out.println("Debes introducir un numero entero: 1 o 2");
+				
+				}
+				
 			}
 				if (option2==1) {
 					A.vaciarJarra();
@@ -104,7 +125,9 @@ public class Main {
 		
 
 		
-			//throw new IllegalArgumentException("Unexpected value: " + key);
+			
+			 
+			 
 		}
 	
 	}

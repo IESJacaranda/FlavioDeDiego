@@ -20,8 +20,13 @@ public class Jarra {
 	
 	public void llenarJarra() {
 
-		aguaTotal+=capacidad-this.estado;
-		this.estado=capacidad;
+		if (this.estado<this.capacidad){
+			this.aguaTotal+=capacidad-this.estado;
+			this.estado=capacidad;
+		} else {
+			System.out.println("La jarra ya está a tope");
+		}
+		
 		
 		
 	}
@@ -31,9 +36,23 @@ public class Jarra {
 	}
 	
 	public void volcarEnJarra(Jarra j2) {
-			while (j2.getEstado()<j2.getCapacidad() && this.estado>0){
-				this.estado-=1;
-				j2.setEstado(j2.getEstado()+1);	
+		
+		if (j2.getEstado()==j2.getCapacidad() || this.estado<=0){
+			
+			System.out.println("No se puede hacer volcado");
+			
+			
+		}
+		else if (this.estado<=(j2.getCapacidad()-j2.getEstado())){
+				
+				j2.setEstado(j2.getEstado()+this.estado);
+				this.estado=0;
+		} else{
+			double auxiliar=0;
+			auxiliar = this.estado-(j2.getCapacidad()-j2.getEstado());
+			j2.setEstado(j2.capacidad);
+			this.estado=auxiliar;
+
 		}
 	}
 	
