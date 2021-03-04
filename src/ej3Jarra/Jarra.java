@@ -6,7 +6,7 @@ public class Jarra {
 	
 	private double capacidad;
 	private double estado=0.0;
-	private double aguaTotal;
+	private static double aguaTotal;
 	
 	
 	
@@ -18,13 +18,14 @@ public class Jarra {
 
 
 	
-	public void llenarJarra() {
+	@SuppressWarnings("static-access")
+	public void llenarJarra() throws Exception {
 
 		if (this.estado<this.capacidad){
 			this.aguaTotal+=capacidad-this.estado;
 			this.estado=capacidad;
 		} else {
-			System.out.println("La jarra ya está a tope");
+			throw new JarraLlenaException();
 		}
 		
 		
@@ -56,9 +57,6 @@ public class Jarra {
 		}
 	}
 	
-	public double calcularAguaGastada(Jarra j2) {
-		return this.aguaTotal+j2.getAguaTotal();
-	}
 
 	public double getCapacidad() {
 		return capacidad;
@@ -80,6 +78,7 @@ public class Jarra {
 		return aguaTotal;
 	}
 
+	@SuppressWarnings("static-access")
 	public void setAguaTotal(double aguaTotal) {
 		this.aguaTotal = aguaTotal;
 	}

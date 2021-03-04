@@ -19,6 +19,7 @@ public class Main {
 	public static void main(String[] args) throws Exception{
 
 		
+		@SuppressWarnings("resource")
 		Scanner sc=new Scanner(System.in);
 		
 		
@@ -32,7 +33,7 @@ public class Main {
 		
 	
 		int option=0;
-		while(option!=6) {
+		while (option!=6) { 
 			mostrarMenu();
 		try {
 			option=Integer.parseInt(sc.nextLine());
@@ -57,14 +58,21 @@ public class Main {
 				}
 				
 			}
+			
+							try {
+				
+			
 				if (option2==1) {
 					A.llenarJarra();
 					System.out.println("Jarra A llenada con éxito");
 				} else {
 					B.llenarJarra();
 					System.out.println("Jarra B llenada con éxito");
-
+					
 				}
+								} catch (Exception e) {
+									System.out.println(e.getMessage());								}
+				
 			break;
 					
 		case 2:
@@ -118,6 +126,7 @@ public class Main {
 			
 		case 6:
 			System.out.println("Hasta luego!!");
+			System.out.println("El agua total gastada es "+A.getAguaTotal());
 			option=6;
 			break;
 			
@@ -129,7 +138,7 @@ public class Main {
 			 
 			 
 		}
-	
+	}
 	}
 
-}
+
