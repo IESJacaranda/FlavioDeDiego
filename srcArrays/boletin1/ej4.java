@@ -39,7 +39,7 @@ public class ej4 {
 		
 		
 		try {
-			System.out.println(ej2.imprimirMatriz(unirListas(lista1, lista2)));
+			System.out.println(Matriz.imprimirMatriz(unirListas(lista1, lista2)));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println(e.getMessage());
