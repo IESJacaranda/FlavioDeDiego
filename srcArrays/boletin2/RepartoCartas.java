@@ -55,6 +55,8 @@ public class RepartoCartas {
 		
 		 ArrayList<String> jugador1 = new ArrayList<String>();
 		 ArrayList<String> jugador2 = new ArrayList<String>();
+		
+		 @SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("Cuantas cartas quieres repartir??");
