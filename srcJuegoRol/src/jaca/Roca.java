@@ -1,11 +1,16 @@
 package jaca;
 
-public class Roca extends Elemento {
+import utiles.Constantes;
 
+public class Roca extends Elemento {
+	
 	
 	public Roca() {
 		super();
+		this.simbolo=Constantes.ROCA;
+	
 	}
+	
 	
 	
 }

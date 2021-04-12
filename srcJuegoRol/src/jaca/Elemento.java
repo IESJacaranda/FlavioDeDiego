@@ -1,25 +1,17 @@
 package jaca;
 
-public class Elemento {
+public abstract class Elemento {
 
 	
-	private char simbolo;
+	protected char simbolo;
 	
 	
 	
-	public Elemento() {};
-	public Elemento(char simbolo) {
-		
-		this.simbolo=simbolo;
-		
-	}
-
-
-
-	@Override
+	
 	public String toString() {
 		
-		return Character.toString(this.simbolo);
+		
+		return ""+simbolo;
 	}
 	
 	
